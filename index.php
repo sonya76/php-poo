@@ -1,18 +1,11 @@
 <?php
-require_once './classes/Voiture.php';
+spl_autoload_register(function($className) {
+    require './classes/' .$className . '.php';
+});
 
+$voiture1 = new Voiture("vert", 1200, "peugeot");
+$voiture1->setCouleur("noir");
+echo $voiture1->getCouleur();
 
-$voiture1 = new Voiture();
-$voiture1 ->couleur="rouge";
-$voiture1 ->masse= 1200;
-$voiture1 ->vitesse= 30;
-
-echo "<br />";
-$voiture1 ->masse=1190;
-echo "<br />";
-
-echo $voiture1->afficheVitesse();
-$voiture2 = new Voiture();
-$voiture2 ->couleur="bleu";
-
+//var_dump($voiture1);
 ?>
